@@ -25,6 +25,7 @@ void LearningArrays::swappingMinMaxInArray(int *arr, int size) {
     int min = 0;
     int max = 0;
     int temp = 0;
+
     for (int i = 0; i < size; ++i) {
         if (arr[i] < arr[min]) {
             min = i;
@@ -34,17 +35,69 @@ void LearningArrays::swappingMinMaxInArray(int *arr, int size) {
         }
     }
 
-    temp=arr[max];
+    temp = arr[max];
     arr[max] = arr[min];
     arr[min] = temp;
 
-    std::cout<<"Array after swapping the minimum and maximum element is: "<<std::endl;
+    std::cout << "Array after swapping the minimum and maximum element is: " << std::endl;
     for (int i = 0; i < size; ++i) {
-        std::cout<<arr[i]<<" "<<std::endl;
+        std::cout << arr[i] << " " << std::endl;
     }
 }
 
-void LearningArrays::uniqueElementsInArray(int *arr, int size) {
+void LearningArrays::uniqueElementsInUnsortedArray(int *arr, int arraySize) {
+    for (int i = 0; i < arraySize; ++i) {
+        int counter = -1;
+        for (int j = 0; j < arraySize; ++j) {
+            if (arr[i] == arr[j])
+                counter++;
+        }
+        if (counter == 0) {
+            std::cout << "unique element found at index " << i << " : " << arr[i] << std::endl;
+        }
+    }
+}
+
+void LearningArrays::uniqueElementInSortedArray(int *arr, int size) {
+    //Here the array is sorted.
+    //Approach:: non - unique element - have a corresponding similar element by its side either at +1 or -1 position + they be in perfect pairs for this question.
+
+    int left = 0;
+    int right = size - 1;
+
+    if (arr[left] != arr[left+1]) {
+        std::cout << arr[left] << std::endl;
+        return;
+    }
+
+    if (arr[right] != arr[right-1]) {
+        std::cout << arr[right] << std::endl;
+        return;
+    }
+
+
+    while (left < right) {
+        int mid = left + right / 2;
+
+        if (arr[mid-1] != arr[mid] && arr[mid] != arr[mid+1]) {
+            break;
+        }
+
+        if (arr[mid] == arr[mid + 1]) {
+            if ((right-(mid+1))%2 != 0) {
+                left = mid+2;
+            } else {
+                right = mid-1;
+            }
+        } else if(arr[mid-1] == arr[mid]){
+            if ((arr[mid-1]-left)%2 != 0) {
+                right = mid-2;
+            }else {
+                left = mid+1;
+            }
+        }
+    }
+    std::cout << "unique element is: " << arr[(left+right)/2] << std::endl;
 }
 
 void LearningArrays::reverseArray(int *arr, int size) {
