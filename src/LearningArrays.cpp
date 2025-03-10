@@ -4,6 +4,7 @@
 
 #include "LearningArrays.h"
 #include <iostream>
+#include <vector>
 
 void LearningArrays::sumOfArray(int *arr, int size) {
     int sum = 0;
@@ -114,5 +115,18 @@ void LearningArrays::reverseArray(int *arr, int size) {
 
 }
 
-void LearningArrays::intersectionOfArrays(int *arr1, int *arr2, int size1, int size2) {
+//Time Complexity = O(n^2)
+std::vector<int> LearningArrays::intersectionOfArrays(int *arr1, int *arr2, int size1, int size2) {
+
+    std::vector<int>result;
+
+    for (int i = 0; i < size1; ++i) {
+        for (int j = 0; j < size2; ++j) {
+            if(arr1[i]==arr2[j]) {
+                result.emplace_back(arr1[i]);
+                break;
+            }
+        }
+    }
+    return result;
 }
