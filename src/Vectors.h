@@ -5,6 +5,8 @@
 class Vectors {
 public:
     static int singleNumberWithBruteForce(std::vector<int> &nums);
+    static int singleNumberWithXOROperation(std::vector<int> &nums);
+
 
 };
 #endif //VECTORS_H

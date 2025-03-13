@@ -25,3 +25,11 @@ int Vectors::singleNumberWithBruteForce(std::vector<int> &nums) {
     }
     return -1;
 }
+
+int Vectors::singleNumberWithXOROperation(std::vector<int> &nums) {
+    int result=0;
+    for (auto num: nums) {
+        result=result^num;
+    }
+    return result;
+}
