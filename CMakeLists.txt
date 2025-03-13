@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(DSA_Prep src/main.cpp
         src/LearningArrays.cpp
-        src/LearningArrays.h)
+        src/LearningArrays.h
+        src/Vectors.cpp
+        src/Vectors.h)
