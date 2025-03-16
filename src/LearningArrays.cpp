@@ -112,21 +112,25 @@ void LearningArrays::reverseArray(int *arr, int size) {
     for (int i = 0; i < size; i++) {
         std::cout << arr[i] << std::endl;
     }
-
 }
 
-//Time Complexity = O(n^2)
-std::vector<int> LearningArrays::intersectionOfArrays(int *arr1, int *arr2, int size1, int size2) {
+void LearningArrays::maximumSubarrayBruteForce(int *arr, int arr_size) {
+    int max = 0;
+    int sum;
 
-    std::vector<int>result;
-
-    for (int i = 0; i < size1; ++i) {
-        for (int j = 0; j < size2; ++j) {
-            if(arr1[i]==arr2[j]) {
-                result.emplace_back(arr1[i]);
-                break;
+    for (int i = 0; i < arr_size; ++i) {
+        for (int j = i; j < arr_size; ++j) {
+            sum = 0;
+            for (int k = i; k <= j; ++k) {
+                std::cout << arr[k];
+                sum = sum + arr[k];
+                if (sum > max) {
+                    max = sum;
+                }
             }
+            std::cout << " ";
         }
+        std::cout << ": " << sum << std::endl;
     }
-    return result;
+    std::cout << "Sum of the max subarray is : " << max << std::endl;
 }
