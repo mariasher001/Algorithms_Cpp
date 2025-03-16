@@ -112,7 +112,25 @@ void LearningArrays::reverseArray(int *arr, int size) {
     for (int i = 0; i < size; i++) {
         std::cout << arr[i] << std::endl;
     }
-
 }
 
+void LearningArrays::maximumSubarrayBruteForce(int *arr, int arr_size) {
+    int max = 0;
+    int sum;
 
+    for (int i = 0; i < arr_size; ++i) {
+        for (int j = i; j < arr_size; ++j) {
+            sum = 0;
+            for (int k = i; k <= j; ++k) {
+                std::cout << arr[k];
+                sum = sum + arr[k];
+                if (sum > max) {
+                    max = sum;
+                }
+            }
+            std::cout << " ";
+        }
+        std::cout << ": " << sum << std::endl;
+    }
+    std::cout << "Sum of the max subarray is : " << max << std::endl;
+}

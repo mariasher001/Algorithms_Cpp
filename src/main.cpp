@@ -4,7 +4,8 @@
 #include "Vectors.h"
 
 int main() {
-    std::vector<int> nums = {90, 90, 8};
-    std::cout << "Single Number O(n): " << Vectors::singleNumberWithXOROperation(nums) << std::endl;
+    int arr[]={1,2,3,4,5};
+    int arr_size = sizeof(arr)/sizeof(int);
+    LearningArrays::maximumSubarrayBruteForce(arr,arr_size);
     return 0;
 }
