@@ -33,3 +33,19 @@ int Vectors::singleNumberWithXOROperation(std::vector<int> &nums) {
     }
     return result;
 }
+
+//Time Complexity = O(n^2)
+std::vector<int> Vectors::intersectionOfArrays(int *arr1, int *arr2, int size1, int size2) {
+
+    std::vector<int>result;
+
+    for (int i = 0; i < size1; ++i) {
+        for (int j = 0; j < size2; ++j) {
+            if(arr1[i]==arr2[j]) {
+                result.emplace_back(arr1[i]);
+                break;
+            }
+        }
+    }
+    return result;
+}
