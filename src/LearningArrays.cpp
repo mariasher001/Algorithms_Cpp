@@ -3,8 +3,8 @@
 //
 
 #include "LearningArrays.h"
+#include <algorithm>
 #include <iostream>
-#include <vector>
 
 void LearningArrays::sumOfArray(int *arr, int size) {
     int sum = 0;
@@ -62,7 +62,6 @@ void LearningArrays::uniqueElementsInUnsortedArray(int *arr, int arraySize) {
 void LearningArrays::uniqueElementInSortedArray(int *arr, int size) {
     //Here the array is sorted.
     //Approach:: non - unique element - have a corresponding similar element by its side either at +1 or -1 position + they be in perfect pairs for this question.
-
     int left = 0;
     int right = size - 1;
 
@@ -117,7 +116,6 @@ void LearningArrays::reverseArray(int *arr, int size) {
 void LearningArrays::maximumSubarrayBruteForce(int *arr, int arr_size) {
     int max = 0;
     int sum;
-
     for (int i = 0; i < arr_size; ++i) {
         for (int j = i; j < arr_size; ++j) {
             sum = 0;
@@ -133,4 +131,17 @@ void LearningArrays::maximumSubarrayBruteForce(int *arr, int arr_size) {
         std::cout << ": " << sum << std::endl;
     }
     std::cout << "Sum of the max subarray is : " << max << std::endl;
+}
+
+int LearningArrays::maxSubArrayKadaneAlgorithm(int *arr, int arr_size) {
+    int sum = 0;
+    int max = INT_MIN;
+    for (int i = 0; i < arr_size; ++i) {
+        sum += arr[i];
+        max = std::max(max, sum);
+        if (sum < 0) {
+            sum = 0;
+        }
+    }
+    return max;
 }
