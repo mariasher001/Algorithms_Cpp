@@ -7,4 +7,5 @@ add_executable(DSA_Prep src/main.cpp
         src/LearningArrays.cpp
         src/LearningArrays.h
         src/Vectors.cpp
-        src/Vectors.h)
+        src/Vectors.h
+        src/PowerOfANumber.h)

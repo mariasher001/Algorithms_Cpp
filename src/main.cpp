@@ -1,11 +1,11 @@
 #include <iostream>
 
 #include "LearningArrays.h"
+#include "PowerOfANumber.h"
 #include "Vectors.h"
 
 int main() {
-    int arr[]={1,2,3,4,5};
-    int arr_size = sizeof(arr)/sizeof(int);
-    std::cout << LearningArrays::maxSubArrayKadaneAlgorithm(arr,arr_size) << std::endl;
+    const double R = PowerOfANumber::powerOfANumber(2.000, -2);
+    std::cout << "result is: " << R << std::endl;
     return 0;
 }
