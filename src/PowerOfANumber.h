@@ -34,6 +34,31 @@ public:
         }
         return x * powerOfANumberWithRecursion(x,n-1);
     }
+
+
+    static double powerOfNumberWithBinaryExponentiation(double x, int n) {
+        long BF = n;
+        double ans = 1;
+        if(n==0) {
+            return 1;
+        }
+        if(n<0) {
+            BF *= -1;
+            x=1/x;
+        }
+
+        while(BF>0){
+            if(BF%2 ==1){
+                ans*=x;
+            }
+            //Squaring x
+            x*=x;
+            //dividing BF
+            BF=BF/2;
+        }
+        return ans;
+
+    }
 };
 
 #endif //POWEROFANUMBER_H
