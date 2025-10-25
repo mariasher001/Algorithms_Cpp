@@ -29,19 +29,15 @@ void Calculator::calculatorScreen() {
 			isExitFlagTrue = false;
 			exit(0);
 		}
-
-		std::cout << "Please enter number 1" << std::endl;
-		std::cin >> mNum1;
-
-		std::cout << "Please enter number 2" << std::endl;
-		std::cin >> mNum2;
-
-
-
 		if (mOperation < 1 || mOperation > 7) {
 			std::cout << "Invalid operation selected. Please try again." << std::endl;
 			calculatorScreen();
 		} else {
+			std::cout << "Please enter number 1" << std::endl;
+			std::cin >> mNum1;
+
+			std::cout << "Please enter number 2" << std::endl;
+			std::cin >> mNum2;
 			CalcOperations(mOperation, mNum1, mNum2);
 		}
 	}
@@ -79,20 +75,29 @@ void Calculator::Subtraction(int num1, int num2) {
 }
 
 void Calculator::Multiplication(int num1, int num2) {
-	std::cout << "The result of multiplying" << num1 << " with " << num2 << " is : " << num1 * num2 << std::endl;
+	std::cout << "The result of multiplying" << num1 << " with " << num2 << " is : " << double(num1) * num2 << std::endl;
 }
 
 void Calculator::Division(int num1, int num2) {
-	std::cout <<"The results of dividing " << num1 << " by " << num2 << " is : " << num1 / num2 << std::endl;
+	if(num2==0) {
+		std::cout<<"Dividing by Zero is undefined. Please enter a non-zero divisor" << std::endl;
+		return;
+	}
+	std::cout <<"The results of dividing " << num1 << " by " << num2 << " is : " << (double)num1 / num2 << std::endl;
 }
 
 void Calculator::Modulus(int num1, int num2) {
-	std::cout << "The modulus of " << num1 << " and " << num2 << " is : " << num1 % num2 << std::endl;
+	if((num1 || num2) ==0) {
+		std::cout<<"Modulus by zero is undefined. Please enter non-zero numbers" << std::endl;
+		return;
+	}
+	num2=abs(num2);
+	std::cout << "The modulus of " << num1 << " and " << num2 << " is : " << ((num1 % num2)+num2)%num2 << std::endl;
 }
 
 void Calculator::PrimeOrNot(int num1, int num2) {
-	PrimeOrNot::IsPrimeOrNot(num1);
-	PrimeOrNot::IsPrimeOrNot(num2);
+	PrimeOrNot::IsPrimeOrNot(abs(num1));
+	PrimeOrNot::IsPrimeOrNot(abs(num2));
 }
 
 void Calculator::EvenOrOdd(int num1, int num2) {
