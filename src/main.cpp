@@ -5,7 +5,6 @@
 #include "Simple Algos/PrimeOrNot.h"
 
 int main() {
-   Calculator calc;
-   calc.calculatorScreen();
-   return 0;
+	PrimeOrNot::IsPrimeOrNotOptimized(5);
+	return 0;
 }

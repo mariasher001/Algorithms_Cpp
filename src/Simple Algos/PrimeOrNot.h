@@ -4,6 +4,7 @@
 class PrimeOrNot {
 public:
 	static void IsPrimeOrNot(int Number);
+	static void IsPrimeOrNotOptimized(int n);
 };
 
 
