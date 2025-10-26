@@ -1,0 +1,38 @@
+//
+// Created by msher on 10/26/2025.
+//
+
+#include "SquareNumberPattern.h"
+
+#include <iostream>
+
+void SquareNumberPattern::printSquareNumberPattern(int n) {
+	int counter = 1;
+	for (int i = 1; i <= n; i++) {
+		for (int j = 1; j <= n; j++) {
+			std::cout << counter++ << " ";
+		}
+		std::cout << std::endl;
+	}
+}
+
+void SquareNumberPattern::printStarSquarePattern(int n) {
+	for (int i = 0; i < n; ++i) {
+		for (int j = 0; j < n; ++j) {
+			std::cout << "* ";
+		}
+		std::cout << std::endl;
+	}
+}
+
+void SquareNumberPattern::printCharachterSquarePattern(int n, char charachter) {
+	for (int i = 0; i < n; ++i) {
+		char ch = charachter;
+		std::cout << ch << " ";
+		for (int j = 1; j < n; ++j) {
+			ch += 1;
+			std::cout << ch << " ";
+		}
+		std::cout << std::endl;
+	}
+}
