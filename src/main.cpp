@@ -6,6 +6,6 @@
 #include "Simple Algos/PrimeOrNot.h"
 
 int main() {
-	SquareNumberPattern::printReverseNumberTrianglePattern(4);
+SquareNumberPattern::printPyramidNumberPattern(4);
 	return 0;
 }

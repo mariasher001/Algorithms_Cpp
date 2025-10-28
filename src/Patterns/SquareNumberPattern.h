@@ -8,6 +8,7 @@ public:
 	static void printCharachterSquarePattern(int n, char ch);
 	static void printStarTrianglePattern(int n);
 	static void printReverseNumberTrianglePattern(int n);
+	static void printPyramidNumberPattern(int n);
 };
 
 

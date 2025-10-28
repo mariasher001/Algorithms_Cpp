@@ -55,3 +55,18 @@ void SquareNumberPattern::printReverseNumberTrianglePattern(int n) {
 	}
 
 }
+
+void SquareNumberPattern::printPyramidNumberPattern(int n) {
+	for (int  i = 1;i <= n; i++) {
+		for(int j =n-i;j>0;j--) {
+			std::cout << " ";
+		}
+		for(int j = i;j>=1;j--) {
+			std::cout << j;
+		}
+		for (int k=i-1; k >0  ;k--) {
+			std::cout << k;
+		}
+		std::cout << std::endl;
+	}
+}
