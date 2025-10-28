@@ -36,3 +36,22 @@ void SquareNumberPattern::printCharachterSquarePattern(int n, char charachter) {
 		std::cout << std::endl;
 	}
 }
+
+void SquareNumberPattern::printStarTrianglePattern(int n) {
+	for (int i = 1; i <= n; ++i) {
+		for (int j = 0; j < i; ++j) {
+			std::cout<<"* ";
+		}
+		std::cout<<std::endl;
+	}
+}
+
+void SquareNumberPattern::printReverseNumberTrianglePattern(int n) {
+	for (int i = 1; i <= n; i++) {
+		for (int j = i; j >0; j--) {
+			std::cout << j << " ";
+		}
+		std::cout << std::endl;
+	}
+
+}
