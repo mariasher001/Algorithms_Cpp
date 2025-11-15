@@ -70,3 +70,14 @@ void SquareNumberPattern::printPyramidNumberPattern(int n) {
 		std::cout << std::endl;
 	}
 }
+
+void SquareNumberPattern::hollowDiamondPattern(int n) {
+//print the spaces and 1 star
+for (int i = 1; i <= n; i++) {
+	for (int j = n-i; j > 0; j--) {
+		std::cout << "-";
+	}
+	std::cout << "*";
+	std::cout << std::endl;
+}
+}

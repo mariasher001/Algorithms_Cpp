@@ -9,6 +9,7 @@ public:
 	static void printStarTrianglePattern(int n);
 	static void printReverseNumberTrianglePattern(int n);
 	static void printPyramidNumberPattern(int n);
+	static void hollowDiamondPattern(int n);
 };
 
 
