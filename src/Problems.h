@@ -89,6 +89,19 @@ public:
 		std::cout << std::endl;
 	}
 
+	void DecimalToBinaryConverter(int number) {
+		int remainder;
+		int power = 1;
+		int FinalBinary = 0;
+		while (number > 0) {
+			remainder = number % 2;
+			FinalBinary = FinalBinary + remainder * power;
+			power = power*10;
+			number = number / 2;
+		}
+		std::cout << "The Binary to Decimal for n " << " is: " << FinalBinary << std::endl;
+	}
+
 	void solution() {
 		int n = 10;
 		int choice;
@@ -100,6 +113,7 @@ public:
 			std::cout << "4. Sum of Digits of a Number" << std::endl;
 			std::cout << "5. Print all Prime Numbers up to N" << std::endl;
 			std::cout << "6. Print all Fibonacci Numbers up to N" << std::endl;
+			std::cout << "7. Decimal to Binary Converter" << std::endl;
 			std::cout << "Please enter your choice: ";
 			std::cin >> choice;
 			switch (choice) {
@@ -109,6 +123,7 @@ public:
 				case 4: sumOfDigitsOfNumber(n);break;
 				case 5: printAllPrimeNumbersUptoN(n);break;
 				case 6: printAllFibonaaciNumbers(n);break;
+				case 7: DecimalToBinaryConverter(n);break;
 				default: std::cout << "Invalid choice. Please try again." << std::endl;
 					break;
 			}
